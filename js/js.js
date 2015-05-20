@@ -25,22 +25,12 @@ jQuery(window).load(function(){
 (function($) {
 	 $.fn.loadkhResponsive = function() {
     	var khResponsive=new khSlider();
-		
 		// process the nav menu
 		khResponsive.do_nav_menu();
-		
-		
     }
-
-		function khSlider(){
-			var rs=this;
-			
-		 
-			
+	function khSlider(){
+			var rs=this;			
 			$('body').addClass('khresponsive_loaded');
-			
-			
-			
 			rs.do_nav_menu=function(){
 				// check if the nav exists
 				if($('.nav').length==0){ return false; }
@@ -51,12 +41,10 @@ jQuery(window).load(function(){
 				// get the template of the nav							
 				rs.get_nav_template();
 			}
-			
 			rs.get_nav_template=function(){
 				$('.nav').each(function(){
 					var navID=$(this).data('id');
 					var navTemplate=$(this).data('template');
-					
 					switch(navTemplate){
 						case 'nav-template-1':
 							$(this).addClass('nav-template-1');
@@ -65,20 +53,7 @@ jQuery(window).load(function(){
 						break; 
 					
 					}
-				
 				});
-			
-			
-			
 			}
-			
-		}
-		
-		
-		
-		
-		
-		
-	
-	
+	}
 }(jQuery));
